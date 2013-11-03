@@ -2,10 +2,10 @@
 
 # Database connection
 # database = "mysql://user[:password]@host/database"
-database = "mysql://root@localhost/society"
+database = "mysql://root@localhost/mule"
 
 # Locale for localized formats
-locale = ro_RO.utf8
+locale = en_US.utf8
 
 # Name of the cookie we set on the client browser for persistent logins
 loginCookieName = "rememberMe"

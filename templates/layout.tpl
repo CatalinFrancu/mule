@@ -13,9 +13,29 @@
 
   <body>
     <div class="title">Mule</div>
+
+    <div class="menu">
+      <ul>
+        <li><a href="{$wwwRoot}">home</a></li>
+        {if $user}
+          <li class="right"><a href="{$wwwRoot}auth/logout">logout</a></li>
+          <li class="userName right">{$user->getDisplayName()}</li>
+        {else}
+          <li class="right"><a id="openidLink" href="{$wwwRoot}auth/login">OpenId login</a></li>
+        {/if}
+      </ul>
+    </div>
+
+    {if $flashMessage}
+      <div class="flashMessage {$flashMessageType}Type">{$flashMessage}</div>
+    {/if}
+
+    <div id="template">
+      {include file=$templateName}
+    </div>
+
     <footer>
-      <div id="license">
-      </div>
+      <div id="license"></div>
     </footer>
   </body>
 

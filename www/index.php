@@ -2,7 +2,7 @@
 
 require_once '../lib/Util.php';
 
-SmartyWrap::assign('pageTitle', 'Clasament');
+SmartyWrap::assign('pageTitle', 'Pagina principală');
 SmartyWrap::display('index.tpl');
 
 ?>

@@ -108,20 +108,6 @@ class Util {
       self::redirect($_SERVER['PHP_SELF'] . $newQueryString);
     }
   }
-
-  /**
-   * $v: an array of n elements
-   * $permutation: a permutation of the set {0, 1, ..., n-1}
-   * Returns an array with the elements of $v permuted
-   **/
-  static function permute($v, $permutation) {
-    $result = array();
-    foreach ($permutation as $elem) {
-      $result[] = $v[$elem];
-    }
-    return $result;
-  }
-
 }
 
 ?>

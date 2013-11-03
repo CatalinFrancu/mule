@@ -1,6 +1,7 @@
 <?php
 
 class Db {
+
   static function init($dsn) {
     $parts = self::parseDsn($dsn);
     ORM::configure(sprintf("mysql:host=%s;dbname=%s", $parts['host'], $parts['database']));
