@@ -1,0 +1,11 @@
+[general]
+
+# Database connection
+# database = "mysql://user[:password]@host/database"
+database = "mysql://root@localhost/society"
+
+# Locale for localized formats
+locale = ro_RO.utf8
+
+# Name of the cookie we set on the client browser for persistent logins
+loginCookieName = "rememberMe"
