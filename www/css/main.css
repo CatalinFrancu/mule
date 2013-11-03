@@ -1,0 +1,115 @@
+body {
+  font-family: arial;
+  margin: 0px auto;
+  width: 1024px;
+}
+
+h1 {
+  font-size: 16px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+a {
+  color: #000;
+}
+
+div.title {
+  background: #444;
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px;
+  margin-bottom: 0px;
+}
+
+div.menu {
+  border: 1px solid #444;
+  margin-bottom: 10px;
+  padding: 1px 10px;
+}
+
+div.menu ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+div.menu li {
+  display: inline;
+  padding-right: 10px;
+}
+
+div.menu li.right {
+  float: right;
+}
+
+div.menu a {
+  color: black;
+  font-size: 90%;
+}
+
+a#openidLink {
+  background: url("../img/openid/openid-16x16.png") no-repeat;
+  padding-left: 20px;
+}
+
+.userName {
+  background: url("../img/silk/user_red.png") no-repeat;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+footer {
+  border-top: 1px solid #bbb;
+  color: #777;
+  font-size: 80%;
+  margin-top: 20px;
+  padding-top: 5px;
+}
+
+footer a {
+  color: #444;
+}
+
+/** auth/ pages **/
+
+#openidProviders a {
+  margin-right: 20px;
+}
+
+#openidProviders a img {
+  vertical-align: middle;
+}
+
+#openidHeadline span {
+  vertical-align: 12px;
+}
+
+/** flash messages **/
+
+div.flashMessage {
+  clear: both;
+  margin: 10px auto;
+  padding: 10px 10px 10px 35px;
+  width: 600px;
+}
+
+div.infoType {
+  background: #cfc url("../img/silk/accept.png") 8px 12px no-repeat;
+  border: 1px solid green;
+  color: green;
+}
+
+div.warningType {
+  background: #feefb3 url("../img/silk/error.png") 8px 12px no-repeat;
+  border: 1px solid #9f6000;
+  color: #9f6000;
+}
+
+div.errorType {
+  background: #fcc url("../img/silk/exclamation.png") 8px 12px no-repeat;
+  border: 1px solid red;
+  color: red;
+}
