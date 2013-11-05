@@ -25,8 +25,9 @@ Installation
 
         $ mysql -u root -e 'create database mule charset utf8'
 
+* Modify mule.conf to reflect your locale, database config etc.
 * Apply any patches to bring the database schema to date:
 
         $ php tools/migration.php
 
-* Depending on your HTTP server and installation path, you may need to enable and configure various modules: userdir, rewrite, PHP
+* Depending on your HTTP server and installation path, you may need to enable and configure various modules: userdir, rewrite, PHP.
