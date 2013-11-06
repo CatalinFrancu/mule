@@ -44,6 +44,7 @@ class Util {
   }
 
   private static function setLocale() {
+    mb_internal_encoding("UTF-8");
     setlocale(LC_ALL, Config::get('general.locale'));
     $domain = "messages";
     bindtextdomain($domain, self::$rootPath . '/locale');

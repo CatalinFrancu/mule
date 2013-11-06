@@ -20,7 +20,7 @@ if ($openid) {
 }
 
 SmartyWrap::assign('openid', $openid);
-SmartyWrap::assign('pageTitle', 'Autentificare cu OpenID');
+SmartyWrap::assign('pageTitle', ucfirst(_('OpenID login')));
 SmartyWrap::display('auth/login.tpl');
 
 ?>

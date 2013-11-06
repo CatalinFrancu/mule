@@ -16,12 +16,12 @@
 
     <div class="menu">
       <ul>
-        <li><a href="{$wwwRoot}">home</a></li>
+        <li><a href="{$wwwRoot}">{"home"|_}</a></li>
         {if $user}
-          <li class="right"><a href="{$wwwRoot}auth/logout">logout</a></li>
+          <li class="right"><a href="{$wwwRoot}auth/logout">{"logout"|_}</a></li>
           <li class="userName right">{$user->getDisplayName()}</li>
         {else}
-          <li class="right"><a id="openidLink" href="{$wwwRoot}auth/login">OpenId login</a></li>
+          <li class="right"><a id="openidLink" href="{$wwwRoot}auth/login">{"OpenID login"|_}</a></li>
         {/if}
       </ul>
     </div>

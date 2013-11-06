@@ -1,1 +1,1 @@
-<h3>Home page h3</h3>
+<h3>{"Mule is working for you!"|_}</h3>
