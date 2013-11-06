@@ -15,7 +15,7 @@ class Util {
     self::definePaths();
     spl_autoload_register('self::autoloadClasses');
     Config::load(self::$rootPath . "/mule.conf");
-    setlocale(LC_ALL, Config::get('general.locale'));
+    self::setLocale();
     require_once self::$rootPath . '/lib/idiorm/idiorm.php';
     require_once self::$rootPath . '/lib/idiorm/paris.php';
     require_once self::$rootPath . '/lib/smarty/Smarty.class.php';
@@ -41,6 +41,14 @@ class Util {
     if (file_exists($fileName)) {
       require_once($fileName);
     }
+  }
+
+  private static function setLocale() {
+    setlocale(LC_ALL, Config::get('general.locale'));
+    $domain = "messages";
+    bindtextdomain($domain, self::$rootPath . '/locale');
+    bind_textdomain_codeset($domain, 'UTF-8');
+    textdomain($domain);
   }
 
   static function getFullServerUrl() {

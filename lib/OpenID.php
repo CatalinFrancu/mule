@@ -58,7 +58,7 @@ class OpenID {
       $redirectUrl = $authRequest->redirectURL(Util::getFullServerUrl(), self::getReturnTo());
 
       if (Auth_OpenID::isFailure($redirectUrl)) {
-        FlashMessage::add('Nu vă putem redirecționa către serverul OpenID: ' . $redirectUrl->message);
+        FlashMessage::add(_('We cannot redirect you to the OpenID server') . ': ' . $redirectUrl->message);
         return false;
       } else {
         Util::redirect($redirectUrl);
@@ -67,7 +67,7 @@ class OpenID {
       $formHtml = $authRequest->htmlMarkup(Util::getFullServerUrl(), self::getReturnTo(), false, array('id' => 'openidMessage'));
 
       if (Auth_OpenID::isFailure($formHtml)) {
-        FlashMessage::add(_('We cannot redirect you to the OpenID server: ') . $formHtml->message);
+        FlashMessage::add(_('We cannot redirect you to the OpenID server') . ': ' . $formHtml->message);
         return false;
       } else {
         print $formHtml;
@@ -87,7 +87,7 @@ class OpenID {
       FlashMessage::add(_('OpenID login canceled.'), 'warning');
       return null;
     } else if ($response->status == Auth_OpenID_FAILURE) {
-      FlashMessage::add(_('OpenID login failed: ') . $response->message);
+      FlashMessage::add(_('OpenID login failed') . ': ' . $response->message);
       return null;
     } else if ($response->status == Auth_OpenID_SUCCESS) {
       $result = array();

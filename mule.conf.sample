@@ -1,11 +1,11 @@
 [general]
 
-# Database connection
-# database = "mysql://user[:password]@host/database"
+; Database connection
+; database = "mysql://user[:password]@host/database"
 database = "mysql://root@localhost/mule"
 
-# Locale for localized formats
+; Locale for localized formats
 locale = en_US.utf8
 
-# Name of the cookie we set on the client browser for persistent logins
-loginCookieName = "rememberMe"
+; Name of the cookie we set on the client browser for persistent logins
+loginCookieName = rememberMe
