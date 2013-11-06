@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mule 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-06 14:56+0200\n"
-"PO-Revision-Date: 2013-11-06 14:58+0200\n"
+"POT-Creation-Date: 2013-11-06 15:07+0200\n"
+"PO-Revision-Date: 2013-11-06 15:07+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team:  <cata@francu.com>\n"
 "Language: \n"
@@ -111,6 +111,10 @@ msgstr "Cum obțin un OpenID?"
 #, php-format
 msgid "Check %sthe list of OpenID providers%s."
 msgstr "Consultă %slista de furnizori de OpenID%s."
+
+#: templates_c/43b7a26b8d770177727b0901ecadf9b6f2c5636a.file.beginAuth.tpl.php:22
+msgid "Redirecting you to your OpenID provider..."
+msgstr "Te redirectăm către furnizorul de OpenID..."
 
 #~ msgid "User %s obtained %d points."
 #~ msgstr "Utilizatorul %s a obținut %d puncte."
