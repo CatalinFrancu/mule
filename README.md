@@ -62,3 +62,7 @@ Installation
   * Restart Apache:
 
           # /etc/init.d/apache2 restart
+
+* For localization to work, you need two things
+  * Install the locale you want on your system
+  * Make sure there is a corresponding entry in the locale/ directory. Note that the names must match exactly. For instance, if your system has a ro_RO locale, but the locale/ directory has a ro_RO.utf8 subdirectory, localization won't work.
