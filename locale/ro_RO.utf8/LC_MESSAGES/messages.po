@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mule 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-16 12:51+0200\n"
-"PO-Revision-Date: 2013-11-16 12:52+0200\n"
+"POT-Creation-Date: 2013-11-17 19:03+0200\n"
+"PO-Revision-Date: 2013-11-17 19:06+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team:  <cata@francu.com>\n"
 "Language: \n"
@@ -21,7 +21,19 @@ msgstr ""
 msgid "Home page"
 msgstr "Pagina principală"
 
-#: www/auth/account.php:18
+#: www/auth/openidReturn.php:16
+msgid "Please pick a username to complete your login."
+msgstr "Alege-ți un nume de utilizator pentru a completa conectarea."
+
+#: www/auth/account.php:36
+msgid "Could not find your OpenID; did you really log in?"
+msgstr "Nu ți-am putut găsi OpenID-ul; chiar te-ai conectat?"
+
+#: www/auth/account.php:49
+msgid "Changes saved."
+msgstr "Am salvat modificările."
+
+#: www/auth/account.php:57
 msgid "my account"
 msgstr "contul meu"
 
@@ -31,7 +43,7 @@ msgstr "conectare cu OpenID"
 
 #: lib/OpenID.php:40
 msgid "You have entered an invalid OpenID."
-msgstr "Ai introdus un OpenID invalid."
+msgstr "Ai introdus un OpenID incorect."
 
 #: lib/OpenID.php:61
 #: lib/OpenID.php:70
@@ -45,6 +57,18 @@ msgstr "conectare cu OpenID anulată."
 #: lib/OpenID.php:90
 msgid "OpenID login failed"
 msgstr "conectare cu OpenID eșuată."
+
+#: lib/model/User.php:26
+msgid "The username must be between 3 and 20 characters long and consist of letters, digits, '-', '.' and '_'."
+msgstr "Numele de utilizator trebuie să aibă între 3 și 20 de caractere și să constea din litere, cifre, '-', '.' și '_'"
+
+#: lib/model/User.php:34
+msgid "This username is already in use."
+msgstr "Acest nume de utilizator este deja folosit."
+
+#: lib/model/User.php:41
+msgid "The email address is invalid."
+msgstr "Adresa de e-mail este incorectă."
 
 #: templates_c/0e43cdfa3dcdc7a84f21705a7ebb3871488464ae.file.index.tpl.php:22
 msgid "Mule is working for you!"
@@ -120,40 +144,40 @@ msgstr "Consultă %slista de furnizori de OpenID%s."
 msgid "Redirecting you to your OpenID provider..."
 msgstr "Te redirectăm către furnizorul de OpenID..."
 
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:34
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:33
 msgid "username"
 msgstr "nume de utilizator"
 
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:37
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:38
 msgid "choose a username"
 msgstr "alege-ți un nume de utilizator"
 
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:39
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:40
 msgid "required; 3-20 characters including letters, digits, '-', '.' and '_'"
 msgstr "obligatoriu; 3-20 caractere incluzând litere, cifre, '-', '.' și '_'"
 
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:43
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:49
 msgid "name"
 msgstr "nume"
 
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:46
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:53
 msgid "enter your full name"
 msgstr "introdu numele tău complet"
 
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:48
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:56
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:55
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:66
 msgid "optional; 3-50 characters"
 msgstr "opțional; 3-50 caractere"
 
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:51
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:60
 msgid "email"
 msgstr "e-mail"
 
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:54
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:64
 msgid "enter your email address"
 msgstr "introdu adresa de e-mail"
 
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:59
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:71
 msgid "save"
 msgstr "salvează"
 
