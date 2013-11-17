@@ -32,3 +32,15 @@
     </tr>
   </table>
 </form>
+
+{if $identities}
+  <h3>{"OpenID identities"|_}</h3>
+
+  <ul>
+    {foreach from=$identities item=i}
+      <li>{$i->openId}</li>
+    {/foreach}
+  </ul>
+
+  <a href="login">{"add another identity"|_}</a>
+{/if}
