@@ -13,6 +13,10 @@ class StringUtil {
     return $endString == $substring;
   }
 
+  static function charAt($s, $i) {
+    return mb_substr($s, $i, 1);
+  }
+
   static function randomCapitalLetters($length) {
     $result = '';
     for ($i = 0; $i < $length; $i++) {

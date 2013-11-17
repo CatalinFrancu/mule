@@ -26,7 +26,7 @@ class OpenID {
   }
 
   private static function getReturnTo() {
-    return Util::getFullServerUrl() . "/auth/openidReturn";
+    return Util::getFullServerUrl() . "auth/openidReturn";
   }
 
   /**
@@ -91,49 +91,59 @@ class OpenID {
       return null;
     } else if ($response->status == Auth_OpenID_SUCCESS) {
       $result = array();
-      $result['identity'] = htmlentities($response->getDisplayIdentifier());
+      $openId = htmlentities($response->getDisplayIdentifier());
+      $identity = Identity::get_by_openId($openId);
+      if ($identity) {
+        $user = User::get_by_id($identity->userId);
+      } else {
+        $identity = Model::factory('Identity')->create();
+        $identity->openId = $openId;
+        $user = Model::factory('User')->create();
 
-      if ($response->endpoint->canonicalID) {
-        $escapedCanonicalId = htmlentities($response->endpoint->canonicalID);
-        // Ignored for now
+        // Try to populate some field values
+
+        if ($response->endpoint->canonicalID) {
+          $escapedCanonicalId = htmlentities($response->endpoint->canonicalID);
+          // Ignored for now
+        }
+
+        $sregResp = Auth_OpenID_SRegResponse::fromSuccessResponse($response);
+        if ($sregResp) {
+          $sreg = $sregResp->contents();
+          if (isset($sreg['email'])) {
+            $user->email = $sreg['email'];
+          }
+          if (isset($sreg['nickname'])) {
+            $user->username = $sreg['nickname'];
+          }
+          if (isset($sreg['fullname'])) {
+            $user->name = $sreg['fullname'];
+          }
+        }
+
+        $axResp = Auth_OpenID_AX_FetchResponse::fromSuccessResponse($response);
+        if ($axResp) {
+          $data = $axResp->data;
+          if (isset($data['http://axschema.org/contact/email']) && count($data['http://axschema.org/contact/email'])) {
+            $user->email = $data['http://axschema.org/contact/email'][0]; // Take this over sreg
+          }
+          if (isset($data['http://axschema.org/namePerson']) && count($data['http://axschema.org/namePerson'])) {
+            $user->fullname = $data['http://axschema.org/namePerson'][0];
+          }
+          $names = array();
+          if (isset($data['http://axschema.org/namePerson/first']) && count($data['http://axschema.org/namePerson/first'])) {
+            $names[] = $data['http://axschema.org/namePerson/first'][0];
+          }
+          if (isset($data['http://axschema.org/namePerson/last']) && count($data['http://axschema.org/namePerson/last'])) {
+            $names[] = $data['http://axschema.org/namePerson/last'][0];
+          }
+          if (count($names)) {
+            $user->name = implode(' ', $names);
+          }
+        }
       }
 
-      $sregResp = Auth_OpenID_SRegResponse::fromSuccessResponse($response);
-      if ($sregResp) {
-        $sreg = $sregResp->contents();
-        if (isset($sreg['email'])) {
-          $result['email'] = $sreg['email'];
-        }
-        if (isset($sreg['nickname'])) {
-          $result['nickname'] = $sreg['nickname'];
-        }
-        if (isset($sreg['fullname'])) {
-          $result['fullname'] = $sreg['fullname'];
-        }
-      }
-
-      $axResp = Auth_OpenID_AX_FetchResponse::fromSuccessResponse($response);
-      if ($axResp) {
-        $data = $axResp->data;
-        if (isset($data['http://axschema.org/contact/email']) && count($data['http://axschema.org/contact/email'])) {
-          $result['email'] = $data['http://axschema.org/contact/email'][0]; // Take this over sreg
-        }
-        if (isset($data['http://axschema.org/namePerson']) && count($data['http://axschema.org/namePerson'])) {
-          $result['fullname'] = $data['http://axschema.org/namePerson'][0];
-        }
-        $names = array();
-        if (isset($data['http://axschema.org/namePerson/first']) && count($data['http://axschema.org/namePerson/first'])) {
-          $names[] = $data['http://axschema.org/namePerson/first'][0];
-        }
-        if (isset($data['http://axschema.org/namePerson/last']) && count($data['http://axschema.org/namePerson/last'])) {
-          $names[] = $data['http://axschema.org/namePerson/last'][0];
-        }
-        if (count($names)) {
-          $result['fullname'] = implode(' ', $names);
-        }
-      }
-
-      return $result;
+      return array($identity, $user);
     }
   }
 }

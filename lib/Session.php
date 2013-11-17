@@ -31,11 +31,6 @@ class Session {
   static function unsetVariable($var) {
     if (isset($_SESSION)) {
       unset($_SESSION[$var]);
-      if (!count($_SESSION)) {
-        // Note that this will prevent us from creating another session during this same request.
-        // This does not seem to cause a problem at the moment.
-        self::kill();
-      }
     }
   }
 
@@ -98,6 +93,30 @@ class Session {
     }
   }
 
+  /**
+   * Saves parameters from a user's first login to the session.
+   * @param $identity The OpenID that the user supplied
+   * @param $user Any SReg info that the user supplied (nickname, name, email)
+   * We store individual fields, because we cannot cache resources.
+   **/
+  static function saveFirstLogin($identity, $user) {
+    self::set('firstLogin', array($identity->openId, $user->username, $user->name, $user->email));
+  }
+
+  static function retrieveFirstLogin() {
+    list($openId, $username, $name, $email) = self::get('firstLogin');
+    if ($openId) {
+      $identity = Model::factory('Identity')->create();
+      $identity->openId = $openId;
+      $user = Model::factory('User')->create();
+      $user->username = $username;
+      $user->name = $name;
+      $user->email = $email;
+      return array($identity, $user);
+    } else {
+      return null;
+    }
+  }
 }
 
 ?>

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mule 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-06 15:07+0200\n"
-"PO-Revision-Date: 2013-11-06 15:07+0200\n"
+"POT-Creation-Date: 2013-11-16 12:51+0200\n"
+"PO-Revision-Date: 2013-11-16 12:52+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team:  <cata@francu.com>\n"
 "Language: \n"
@@ -20,6 +20,10 @@ msgstr ""
 #: www/index.php:5
 msgid "Home page"
 msgstr "Pagina principală"
+
+#: www/auth/account.php:18
+msgid "my account"
+msgstr "contul meu"
 
 #: www/auth/login.php:23
 msgid "OpenID login"
@@ -115,6 +119,43 @@ msgstr "Consultă %slista de furnizori de OpenID%s."
 #: templates_c/43b7a26b8d770177727b0901ecadf9b6f2c5636a.file.beginAuth.tpl.php:22
 msgid "Redirecting you to your OpenID provider..."
 msgstr "Te redirectăm către furnizorul de OpenID..."
+
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:34
+msgid "username"
+msgstr "nume de utilizator"
+
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:37
+msgid "choose a username"
+msgstr "alege-ți un nume de utilizator"
+
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:39
+msgid "required; 3-20 characters including letters, digits, '-', '.' and '_'"
+msgstr "obligatoriu; 3-20 caractere incluzând litere, cifre, '-', '.' și '_'"
+
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:43
+msgid "name"
+msgstr "nume"
+
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:46
+msgid "enter your full name"
+msgstr "introdu numele tău complet"
+
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:48
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:56
+msgid "optional; 3-50 characters"
+msgstr "opțional; 3-50 caractere"
+
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:51
+msgid "email"
+msgstr "e-mail"
+
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:54
+msgid "enter your email address"
+msgstr "introdu adresa de e-mail"
+
+#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:59
+msgid "save"
+msgstr "salvează"
 
 #~ msgid "User %s obtained %d points."
 #~ msgstr "Utilizatorul %s a obținut %d puncte."

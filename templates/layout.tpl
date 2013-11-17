@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>{$pageTitle} | Mule</title>
+    <title>{$pageTitle|ucfirst} | Mule</title>
     <meta charset="utf-8">
     {foreach from=$cssFiles item=cssFile}
       <link type="text/css" href="{$wwwRoot}css/{$cssFile}" rel="stylesheet"/>
@@ -19,6 +19,7 @@
         <li><a href="{$wwwRoot}">{"home"|_}</a></li>
         {if $user}
           <li class="right"><a href="{$wwwRoot}auth/logout">{"logout"|_}</a></li>
+          <li class="right"><a href="{$wwwRoot}auth/account">{"my account"|_}</a></li>
           <li class="userName right">{$user->getDisplayName()}</li>
         {else}
           <li class="right"><a id="openidLink" href="{$wwwRoot}auth/login">{"OpenID login"|_}</a></li>

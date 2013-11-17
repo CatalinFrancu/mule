@@ -3,12 +3,18 @@
 require_once '../../lib/Util.php';
 Util::requireNotLoggedIn();
 
-$data = OpenID::finishAuth();
-if (!$data) {
+list($identity, $user) = OpenID::finishAuth();
+if (!$identity) {
   Util::redirect('login');
 }
 
-$user = User::updateFromOpenId($data);
-Session::login($user);
+if ($user->id) {
+  Session::login($user);
+} else {
+  // Ask the user to choose a username.
+  Session::saveFirstLogin($identity, $user);
+  FlashMessage::add(_('Please pick a username to complete your login.'), 'warning');
+  Util::redirect('account.php');
+}
 
 ?>

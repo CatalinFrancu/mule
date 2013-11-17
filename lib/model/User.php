@@ -4,8 +4,8 @@ class User extends BaseObject {
 
   function getDisplayName() {
     $s = $this->identity;
-    if ($this->nickname) {
-      $s = $this->nickname;
+    if ($this->username) {
+      $s = $this->username;
     } else if ($this->name) {
       $s = $this->name;
     } else if ($this->email) {
@@ -15,28 +15,36 @@ class User extends BaseObject {
   }
 
   /**
-   * Creates a new user or updates an existing one with the ones provided.
-   **/
-  static function updateFromOpenId($openidData) {
-    $user = self::get_by_identity($openidData['identity']);
-    if (!$user) {
-      $user = Model::factory('User')->create();
+   * Validates a user for correctness. If $flashErrors is set, then sets flash error messages.
+   */
+  function validate($flashErrors = true) {
+    $valid = true;
+
+    if (!preg_match("/^[-._0-9\p{L}]{3,20}$/u", $this->username)) {
+      $valid = false;
+      if ($flashErrors) {
+        FlashMessage::add(_("The username must be between 3 and 20 characters long and consist of letters, digits, '-', '.' and '_'."));
+      }
     }
-    if (!$user->identity) {
-      $user->identity = $openidData['identity'];
+
+    $otherUser = Model::factory('User')->where('username', $this->username)->find_one();
+    if ($otherUser && ($otherUser->id != $this->id)) {
+      $valid = false;
+      if ($flashErrors) {
+        FlashMessage::add(_('This username is already in use.'));
+      }
     }
-    if (isset($openidData['nickname'])) {
-      $user->nickname = $openidData['nickname'];
+
+    if ($this->email && !filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+      $valid = false;
+      if ($flashErrors) {
+        FlashMessage::add(_('The email address is invalid.'));
+      }
     }
-    if (isset($openidData['fullname'])) {
-      $user->name = $openidData['fullname'];
-    }
-    if (isset($openidData['email'])) {
-      $user->email = $openidData['email'];
-    }
-    $user->save();
-    return $user;
+
+    return $valid;
   }
+
 }
 
 ?>

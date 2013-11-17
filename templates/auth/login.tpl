@@ -1,4 +1,4 @@
-<h3>{"OpenID login"|_|ucfirst}</h3>
+<h3>{"OpenID login"|_}</h3>
 
 <form name="loginForm" method="post" action="{$wwwRoot}auth/login">
   OpenID:
