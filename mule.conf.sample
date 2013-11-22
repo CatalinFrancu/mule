@@ -5,7 +5,7 @@
 database = "mysql://root@localhost/mule"
 
 ; Locale for localized formats
-locale = en_US.utf8
+locale = ro_RO.utf8
 
 ; Name of the cookie we set on the client browser for persistent logins
 loginCookieName = rememberMe
