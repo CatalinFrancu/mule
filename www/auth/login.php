@@ -1,7 +1,6 @@
 <?php 
 
 require_once '../../lib/Util.php';
-Util::requireNotLoggedIn();
 
 $openid = Util::getRequestParameter('openid');
 

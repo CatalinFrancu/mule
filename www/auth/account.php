@@ -54,7 +54,7 @@ if ($submitButton) {
 
 SmartyWrap::assign('editUser', $user);
 SmartyWrap::assign('firstLogin', $firstLogin);
-SmartyWrap::assign('identities', $firstLogin ? array() : Identity::get_by_userId($user->id));
+SmartyWrap::assign('identities', $firstLogin ? array() : Identity::get_all_by_userId($user->id));
 SmartyWrap::assign('pageTitle', _('my account'));
 SmartyWrap::display('auth/account.tpl');
 

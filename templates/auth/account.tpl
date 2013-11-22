@@ -42,5 +42,5 @@
     {/foreach}
   </ul>
 
-  <a href="login">{"add another identity"|_}</a>
+  <a href="login">{"link another OpenID to this account"|_}</a>
 {/if}
