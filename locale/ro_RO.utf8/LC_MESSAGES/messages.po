@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mule 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-22 17:19+0200\n"
-"PO-Revision-Date: 2013-11-22 17:20+0200\n"
+"POT-Creation-Date: 2013-11-22 19:02+0200\n"
+"PO-Revision-Date: 2013-11-22 19:02+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team:  <cata@francu.com>\n"
 "Language: ro_RO\n"
@@ -12,150 +12,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
 "X-Poedit-Basepath: /home/cata/public_html/mule\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-SearchPath-0: .\n"
-
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:29
-#: templates_c/1ae5997b760fb39edab10a98346bbe71026ee6ba.file.layout.tpl.php:74
-#: www/auth/account.php:58
-msgid "my account"
-msgstr "contul meu"
-
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:35
-msgid "username"
-msgstr "nume de utilizator"
-
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:40
-msgid "choose a username"
-msgstr "alege-ți un nume de utilizator"
-
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:42
-msgid "required; 3-20 characters including letters, digits, '-', '.' and '_'"
-msgstr "obligatoriu; 3-20 caractere incluzând litere, cifre, '-', '.' și '_'"
-
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:51
-msgid "name"
-msgstr "nume"
-
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:55
-msgid "enter your full name"
-msgstr "introdu numele tău complet"
-
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:57
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:68
-msgid "optional; 3-50 characters"
-msgstr "opțional; 3-50 caractere"
-
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:62
-msgid "email"
-msgstr "e-mail"
-
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:66
-msgid "enter your email address"
-msgstr "introdu adresa de e-mail"
-
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:73
-msgid "save"
-msgstr "salvează"
-
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:80
-msgid "OpenID identities"
-msgstr "Identități OpenID"
-
-#: templates_c/2567afdbe8d8cea54012848a55f14c8bc996bcf6.file.account.tpl.php:94
-msgid "link another OpenID to this account"
-msgstr "leagă alt OpenID de acest cont"
-
-#: templates_c/0e43cdfa3dcdc7a84f21705a7ebb3871488464ae.file.index.tpl.php:22
-msgid "Mule is working for you!"
-msgstr "Mule funcționează!"
-
-#: templates_c/43b7a26b8d770177727b0901ecadf9b6f2c5636a.file.beginAuth.tpl.php:22
-msgid "Redirecting you to your OpenID provider..."
-msgstr "Te redirectăm către furnizorul de OpenID..."
-
-#: templates_c/1ae5997b760fb39edab10a98346bbe71026ee6ba.file.layout.tpl.php:67
-msgid "home"
-msgstr "acasă"
-
-#: templates_c/1ae5997b760fb39edab10a98346bbe71026ee6ba.file.layout.tpl.php:71
-msgid "logout"
-msgstr "deconectare"
-
-#: templates_c/1ae5997b760fb39edab10a98346bbe71026ee6ba.file.layout.tpl.php:80
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:27
-#: www/auth/login.php:22
-msgid "OpenID login"
-msgstr "conectare cu OpenID"
-
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:35
-msgid "login"
-msgstr "conectare"
-
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:40
-msgid "If you have a Google or Yahoo account, you can use it as an OpenID:"
-msgstr "Dacă ai un cont de Google say Yahoo, îl poți folosi ca OpenID:"
-
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:46
-msgid "Google account login"
-msgstr "Conectare cu contul Google"
-
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:50
-msgid "Yahoo account login"
-msgstr "Conectare cu contul Yahoo"
-
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:54
-msgid "What is OpenID?"
-msgstr "Ce este OpenID?"
-
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:59
-msgid "OpenID logo"
-msgstr "logo OpenID"
-
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:61
-msgid "is a faster, easier way to log in on the Internet."
-msgstr ""
-"este o modalitate mai rapidă și mai ușoară de a te autentifica pe Internet."
-
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:67
-msgid "No need to create a new account on this site;"
-msgstr "Nu este nevoie să îți creezi un cont nou pe acest site;"
-
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:69
-msgid "No need to remember yet another password;"
-msgstr "Nu este nevoie să memorezi o parolă în plus;"
-
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:71
-msgid ""
-"Once created, an OpenID account can be reused on any website that accepts "
-"OpenIDs;"
-msgstr ""
-"Un cont OpenID, odată creat, poate fi refolosit pe orice site care acceptă "
-"OpenID;"
-
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:73
-msgid ""
-"Chances are you already have an OpenID, because many popular sites (Google, "
-"Yahoo and others) act as OpenID providers."
-msgstr ""
-"Este posibil să ai deja un OpenID, deoarece multe site-uri populare (Google, "
-"Yahoo și altele) servesc ca furnizori de OpenID."
-
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:77
-#, php-format
-msgid "You can read more on the %sOpenID website%s."
-msgstr ""
-"Poți citi mai multe informații pe %ssite-ul OpenID%s (în limba engleză)."
-
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:80
-msgid "How do I obtain an OpenID?"
-msgstr "Cum obțin un OpenID?"
-
-#: templates_c/3f29a88fba6f6ee11c55037e03ce62e766365277.file.login.tpl.php:83
-#, php-format
-msgid "Check %sthe list of OpenID providers%s."
-msgstr "Consultă %slista de furnizori de OpenID%s."
+"X-Poedit-SearchPath-0: lib\n"
+"X-Poedit-SearchPath-1: templates\n"
+"X-Poedit-SearchPath-2: www\n"
 
 #: lib/OpenID.php:40
 msgid "You have entered an invalid OpenID."
@@ -201,6 +62,10 @@ msgstr "Nu ți-am putut găsi OpenID-ul; chiar te-ai conectat?"
 msgid "Changes saved."
 msgstr "Am salvat modificările."
 
+#: www/auth/account.php:58 templates/layout.tpl:22
+msgid "my account"
+msgstr "contul meu"
+
 #: www/auth/openidReturn.php:17
 msgid "New OpenID linked to your account."
 msgstr "Noul OpenID a fost legat de contul tău."
@@ -220,6 +85,136 @@ msgstr ""
 #: www/auth/openidReturn.php:31
 msgid "Please pick a username to complete your login."
 msgstr "Alege-ți un nume de utilizator pentru a completa conectarea."
+
+#: www/auth/login.php:22 templates/layout.tpl:25
+msgid "OpenID login"
+msgstr "conectare cu OpenID"
+
+#: templates/layout.tpl:19
+msgid "home"
+msgstr "acasă"
+
+#: templates/layout.tpl:21
+msgid "logout"
+msgstr "deconectare"
+
+#: templates/index.tpl:1
+msgid "Mule is working for you!"
+msgstr "Mule funcționează!"
+
+#: templates/auth/beginAuth.tpl:1
+msgid "Redirecting you to your OpenID provider..."
+msgstr "Te redirectăm către furnizorul de OpenID..."
+
+#: templates/auth/login.tpl:6
+msgid "login"
+msgstr "conectare"
+
+#: templates/auth/login.tpl:10
+msgid "If you have a Google or Yahoo account, you can use it as an OpenID:"
+msgstr "Dacă ai un cont de Google say Yahoo, îl poți folosi ca OpenID:"
+
+#: templates/auth/login.tpl:13
+msgid "Google account login"
+msgstr "Conectare cu contul Google"
+
+#: templates/auth/login.tpl:14
+msgid "Yahoo account login"
+msgstr "Conectare cu contul Yahoo"
+
+#: templates/auth/login.tpl:17
+msgid "What is OpenID?"
+msgstr "Ce este OpenID?"
+
+#: templates/auth/login.tpl:20
+msgid "OpenID logo"
+msgstr "logo OpenID"
+
+#: templates/auth/login.tpl:21
+msgid "is a faster, easier way to log in on the Internet."
+msgstr ""
+"este o modalitate mai rapidă și mai ușoară de a te autentifica pe Internet."
+
+#: templates/auth/login.tpl:26
+msgid "No need to create a new account on this site;"
+msgstr "Nu este nevoie să îți creezi un cont nou pe acest site;"
+
+#: templates/auth/login.tpl:27
+msgid "No need to remember yet another password;"
+msgstr "Nu este nevoie să memorezi o parolă în plus;"
+
+#: templates/auth/login.tpl:28
+msgid ""
+"Once created, an OpenID account can be reused on any website that accepts "
+"OpenIDs;"
+msgstr ""
+"Un cont OpenID, odată creat, poate fi refolosit pe orice site care acceptă "
+"OpenID;"
+
+#: templates/auth/login.tpl:29
+msgid ""
+"Chances are you already have an OpenID, because many popular sites (Google, "
+"Yahoo and others) act as OpenID providers."
+msgstr ""
+"Este posibil să ai deja un OpenID, deoarece multe site-uri populare (Google, "
+"Yahoo și altele) servesc ca furnizori de OpenID."
+
+#: templates/auth/login.tpl:32
+msgid "You can read more on the %sOpenID website%s."
+msgstr ""
+"Poți citi mai multe informații pe %ssite-ul OpenID%s (în limba engleză)."
+
+#: templates/auth/login.tpl:34
+msgid "How do I obtain an OpenID?"
+msgstr "Cum obțin un OpenID?"
+
+#: templates/auth/login.tpl:36
+msgid "Check %sthe list of OpenID providers%s."
+msgstr "Consultă %slista de furnizori de OpenID%s."
+
+#: templates/auth/account.tpl:6
+msgid "username"
+msgstr "nume de utilizator"
+
+#: templates/auth/account.tpl:9
+msgid "choose a username"
+msgstr "alege-ți un nume de utilizator"
+
+#: templates/auth/account.tpl:10
+msgid "required; 3-20 characters including letters, digits, '-', '.' and '_'"
+msgstr "obligatoriu; 3-20 caractere incluzând litere, cifre, '-', '.' și '_'"
+
+#: templates/auth/account.tpl:17
+msgid "name"
+msgstr "nume"
+
+#: templates/auth/account.tpl:19
+msgid "enter your full name"
+msgstr "introdu numele tău complet"
+
+#: templates/auth/account.tpl:20
+msgid "optional; 3-50 characters"
+msgstr "opțional; 3-50 caractere"
+
+#: templates/auth/account.tpl:24
+msgid "email"
+msgstr "e-mail"
+
+#: templates/auth/account.tpl:26
+msgid "enter your email address"
+msgstr "introdu adresa de e-mail"
+
+#: templates/auth/account.tpl:31
+msgid "save"
+msgstr "salvează"
+
+#: templates/auth/account.tpl:37
+msgid "OpenID identities"
+msgstr "Identități OpenID"
+
+#: templates/auth/account.tpl:45
+msgid "link another OpenID to this account"
+msgstr "leagă alt OpenID de acest cont"
 
 #~ msgid "User %s obtained %d points."
 #~ msgstr "Utilizatorul %s a obținut %d puncte."
