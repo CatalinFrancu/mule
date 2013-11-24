@@ -89,7 +89,7 @@ We'd like to keep up with localization. You don't need to do the translation you
 
         return _('OpenID login failed');
 
-* In Smarty templates, use the "_" variable modifier around string literals. We recommend doing this at sentence level:
+* In Smarty templates, use the "_" variable modifier around string literals. We recommend doing this at paragraph level:
 
         {"String to be localized"|_}
 
