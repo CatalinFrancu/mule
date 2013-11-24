@@ -75,13 +75,13 @@ To use Mule in your language, you need three things:
 * Someone actually needs to do the translation work for your language. You can be that person! :-) See below for contributions.
 
 
-Localization (for contributors)
+Localization (for programmers)
 -------------------------------
 
 
 We'd like to keep up with localization. You don't need to do the translation yourself, but we'd appreciate it if you tagged the strings that need be localized.
 
-* In PHP, just add a call to gettext around all literal strings. So instead of 
+* In PHP, just add a call to gettext() around all literal strings. So instead of 
 
         return 'OpenID login failed';
 
@@ -89,7 +89,7 @@ We'd like to keep up with localization. You don't need to do the translation you
 
         return _('OpenID login failed');
 
-* In Smarty templates, we're relying on the trick that Smarty templates are eventually compiled to PHP files and poedit / xgettext can pick up on those. So just use the "_" variable modifier around string literals. We recommend doing this at sentence level:
+* In Smarty templates, use the "_" variable modifier around string literals. We recommend doing this at paragraph level:
 
         {"String to be localized"|_}
 
@@ -99,11 +99,24 @@ You can use sprintf in both PHP and Smarty so you can localize parametric senten
 
 Note that this syntax does not allow for changes in argument orders between languages. We'll try to live with it.
 
-To make sure that your strings get picked up by the translation tool, please follow these steps:
+Localization (for translators)
+------------------------------
 
-* Exercise all the affected pages so that the Smarty templates get compiled;
-* Install poedit
-* Run poedit locale/ro_RO.utf8/LC_MESSAGES/messages.po
-* Run Catalog -> Update from sources
-* Make sure that all your new strings show up
-* Optionally save the catalog to make sure we get the new strings (we run poedit ourselves every now and then)
+We use poedit for translation. It needs some light customization for the Smarty syntax (poedit doesn't know it by default).
+
+* Install poedit;
+* Run
+
+        poedit locale/ro_RO.utf8/LC_MESSAGES/messages.po
+
+* Go to Edit -> Preferences -> Personalize and enter your name and email address;
+* Under Edit -> Preferences -> Parsers, hit New to add a new Parser. Set these values:
+  * language: Smarty
+  * extensions = *.tpl
+  * parser command = php /home/cata/public_html/mule/tools/tplParser.php %o %F
+  * an item in input files list = %f
+
+To do the actual translation:
+
+* Run Catalog -> Update from sources;
+* Translate any new strings.
