@@ -1,25 +1,46 @@
 <?php
 
 class BaseObject extends Model {
+  const ACTION_SELECT = 1;
+  const ACTION_SELECT_ALL = 2;
+  const ACTION_DELETE_ALL = 3;
+
   /**
    * Accept calls like User::get_by_email($email) and User::get_all_by_email($email)
    **/
   static function __callStatic($name, $arguments) {
-    $getBy = substr($name, 0, 7) == 'get_by_';
-    $getAllBy = substr($name, 0, 11) == 'get_all_by_';
-    if ($getBy || $getAllBy) {
-      $fieldString = substr($name, $getBy ? 7 : 11);
-      $fields = explode('_', $fieldString);
-      if (count($fields) != count($arguments)) {
-        self::__die('incorrect number of arguments', $name, $arguments);
-      }
-      $clause = Model::factory(get_called_class());
-      foreach ($fields as $i => $field) {
-        $clause = $clause->where($field, $arguments[$i]);
-      }
-      return $getBy ? $clause->find_one() : $clause->find_many();
+    $action = null;
+    if (substr($name, 0, 7) == 'get_by_') {
+      return self::action(substr($name, 7), $arguments, self::ACTION_SELECT);
+    } else if (substr($name, 0, 11) == 'get_all_by_') {
+      return self::action(substr($name, 11), $arguments, self::ACTION_SELECT_ALL);
+    } else if (substr($name, 0, 14) == 'delete_all_by_') {
+      self::action(substr($name, 14), $arguments, self::ACTION_DELETE_ALL);
+    } else {
+      self::__die('cannot handle method', $name, $arguments);
     }
-    self::__die('cannot handle method', $name, $arguments);
+  }
+
+  private static function action($fieldString, $arguments, $action) {
+    $fields = explode('_', $fieldString);
+    if (count($fields) != count($arguments)) {
+      self::__die('incorrect number of arguments', $action, $arguments);
+    }
+    $clause = Model::factory(get_called_class());
+    foreach ($fields as $i => $field) {
+      $clause = $clause->where($field, $arguments[$i]);
+    }
+
+    switch ($action) {
+      case self::ACTION_SELECT: return $clause->find_one();
+      case self::ACTION_SELECT_ALL: return $clause->find_many();
+      case self::ACTION_DELETE_ALL:
+        $objects = $clause->find_many();
+        foreach ($objects as $o) {
+          $o->delete();
+        }
+        break;
+    }
   }
 
   static function __die($message, $name, $arguments) {

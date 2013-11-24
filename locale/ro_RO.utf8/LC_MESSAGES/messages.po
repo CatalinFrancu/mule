@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mule 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-24 20:11+0200\n"
-"PO-Revision-Date: 2013-11-24 20:11+0200\n"
+"POT-Creation-Date: 2013-11-24 21:05+0200\n"
+"PO-Revision-Date: 2013-11-24 21:06+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team:  <cata@francu.com>\n"
 "Language: ro_RO\n"
@@ -90,15 +90,15 @@ msgstr "Alege-ți un nume de utilizator pentru a completa conectarea."
 msgid "OpenID login"
 msgstr "conectare cu OpenID"
 
-#: www/auth/emailLogin.php:13
+#: www/auth/emailLogin.php:15
 msgid "Please enter an email address."
 msgstr "Te rugăm să introduci o adresă de e-mail."
 
-#: www/auth/emailLogin.php:15
+#: www/auth/emailLogin.php:17
 msgid "There is no account with that email address."
 msgstr "Nu există niciun cont cu această adresă de e-mail."
 
-#: www/auth/emailLogin.php:19
+#: www/auth/emailLogin.php:21
 msgid ""
 "We have sent you a one-time login code. Please check your email to complete "
 "the login process."
@@ -106,11 +106,21 @@ msgstr ""
 "Ți-am trimis un cod de unică folosință. Te rugăm să-ți verifici e-mailul "
 "pentru a completa procesul de conectare."
 
-#: www/auth/emailLogin.php:25 templates/auth/login.tpl:17
+#: www/auth/emailLogin.php:31
+msgid "Invalid token"
+msgstr "Cod invalid"
+
+#: www/auth/emailLogin.php:34
+msgid ""
+"You have successfully logged in. Please remember to link an OpenID to your "
+"account."
+msgstr "Conectare reușită. Nu uita să legi un OpenID de contul tău."
+
+#: www/auth/emailLogin.php:40 templates/auth/login.tpl:17
 msgid "Email login"
 msgstr "Conectare prin e-mail"
 
-#: www/auth/emailLogin.php:47
+#: www/auth/emailLogin.php:62
 msgid "Email login token"
 msgstr "Cod de conectare prin e-mail"
 

@@ -1,12 +1,16 @@
 <?php 
 
+define("ONE_HOUR_IN_SECONDS", 3600);
+
 require_once '../../lib/Util.php';
+Util::requireNotLoggedIn();
 
 $email = Util::getRequestParameter('email');
 $token = Util::getRequestParameter('token');
 $submitButton = Util::getRequestParameter('submitButton');
 
 if ($submitButton) {
+  // user typed an email address and wants an token
   $user = User::get_by_email($email);
 
   if (!$email) {
@@ -14,10 +18,23 @@ if ($submitButton) {
   } else if (!$user) {
     FlashMessage::add(_('There is no account with that email address.'));
   } else {
-    // Send e-mail here
+    LoginToken::delete_all_by_userId($user->id);
     sendEmailToken($user);
     FlashMessage::add(_('We have sent you a one-time login code. Please check your email to complete the login process.'), 'info');
     Util::redirect('emailLogin.php'); // To clear all data
+  }
+
+} else if ($email && $token) {
+  // user clicked on a link and wants to log in
+  $lt = Model::factory('LoginToken')->where('token', $token)->where_gte('created', time() - ONE_HOUR_IN_SECONDS)->find_one();
+  $user = User::get_by_email($email);
+
+  if (!$lt || !$user || ($lt->userId != $user->id)) {
+    FlashMessage::add(_('Invalid token'));
+  } else {
+    LoginToken::delete_all_by_userId($user->id);
+    FlashMessage::add(_('You have successfully logged in. Please remember to link an OpenID to your account.'), 'warning');
+    Session::login($user);
   }
 }
 
