@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mule 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-24 19:49+0200\n"
-"PO-Revision-Date: 2013-11-24 19:50+0200\n"
+"POT-Creation-Date: 2013-11-24 20:11+0200\n"
+"PO-Revision-Date: 2013-11-24 20:11+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team:  <cata@francu.com>\n"
 "Language: ro_RO\n"
@@ -110,7 +110,7 @@ msgstr ""
 msgid "Email login"
 msgstr "Conectare prin e-mail"
 
-#: www/auth/emailLogin.php:41
+#: www/auth/emailLogin.php:47
 msgid "Email login token"
 msgstr "Cod de conectare prin e-mail"
 
