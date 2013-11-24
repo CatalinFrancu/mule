@@ -19,6 +19,11 @@ class SmartyWrap {
     self::$theSmarty->assign($name, $value);
   }
 
+  static function fetchEmail($templateName) {
+    $result = self::$theSmarty->fetch('email/' . $templateName);
+    return str_replace("\n", "\r\n", $result); // Acording to specs
+  }
+
   static function display($templateName) {
     self::assign('cssFiles', self::$cssFiles);
     self::assign('jsFiles', self::$jsFiles);

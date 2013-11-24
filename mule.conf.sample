@@ -9,3 +9,17 @@ locale = ro_RO.utf8
 
 ; Name of the cookie we set on the client browser for persistent logins
 loginCookieName = rememberMe
+
+[email]
+
+; When false, prevent the system from sending out any emails
+enabled = false
+
+; From address when sending emails
+fromHeader = "From: Mule <email@example.com>"
+
+; Reply-to address when sending emails
+replyToHeader = "Reply-To: Mule <email@example.com>"
+
+; signature line at the end of outgoing emails
+signature = "The Mule team"

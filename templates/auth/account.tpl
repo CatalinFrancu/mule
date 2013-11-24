@@ -21,7 +21,7 @@
       </td>
     </tr>
     <tr>
-      <td><label for="name">{"email"|_}:</label></td>
+      <td><label for="email">{"email"|_}:</label></td>
       <td>
         <input type="text" id="email" name="email" value="{$editUser->email}" maxlength="50" placeholder="{"enter your email address"|_}">
         <div class="fieldDesc">{"optional; 3-50 characters"|_}</div>

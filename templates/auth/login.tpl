@@ -1,6 +1,6 @@
 <h3>{"OpenID login"|_}</h3>
 
-<form name="loginForm" method="post" action="{$wwwRoot}auth/login">
+<form method="post" action="login">
   OpenID:
   <input type="text" name="openid" value="{$openid}" size="50" autofocus="autofocus"/>
   <input type=submit id="login" name="submitButton" value="{'login'|_}"/>  
@@ -14,12 +14,15 @@
   <a href="{$wwwRoot}auth/login?openid=yahoo"><img src="{$wwwRoot}img/openid/yahoo.png" alt="{'Yahoo account login'|_}"/></a>
 </div>
 
+<h3>{"Email login"|_}</h3>
+
+{"If your OpenID provider is currently down, you can %srequest a one-time token%s via email."|_|sprintf:'<a href="emailLogin">':'</a>'}
+
 <h3>{"What is OpenID?"|_}</h3>
 
 <div id="openidHeadline">
   <img src="{$wwwRoot}img/openid/openid.png" alt="{'OpenID logo'|_}"/>
   <span>{'is a faster, easier way to log in on the Internet.'|_}</span>
-  <span>este o modalitate mai rapidă și mai ușoară de a te autentifica pe Internet.</span>
 </div>
 
 <ul>

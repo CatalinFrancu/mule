@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mule 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-22 19:02+0200\n"
-"PO-Revision-Date: 2013-11-22 19:02+0200\n"
+"POT-Creation-Date: 2013-11-24 19:49+0200\n"
+"PO-Revision-Date: 2013-11-24 19:50+0200\n"
 "Last-Translator: Cătălin Frâncu <cata@francu.com>\n"
 "Language-Team:  <cata@francu.com>\n"
 "Language: ro_RO\n"
@@ -90,6 +90,30 @@ msgstr "Alege-ți un nume de utilizator pentru a completa conectarea."
 msgid "OpenID login"
 msgstr "conectare cu OpenID"
 
+#: www/auth/emailLogin.php:13
+msgid "Please enter an email address."
+msgstr "Te rugăm să introduci o adresă de e-mail."
+
+#: www/auth/emailLogin.php:15
+msgid "There is no account with that email address."
+msgstr "Nu există niciun cont cu această adresă de e-mail."
+
+#: www/auth/emailLogin.php:19
+msgid ""
+"We have sent you a one-time login code. Please check your email to complete "
+"the login process."
+msgstr ""
+"Ți-am trimis un cod de unică folosință. Te rugăm să-ți verifici e-mailul "
+"pentru a completa procesul de conectare."
+
+#: www/auth/emailLogin.php:25 templates/auth/login.tpl:17
+msgid "Email login"
+msgstr "Conectare prin e-mail"
+
+#: www/auth/emailLogin.php:41
+msgid "Email login token"
+msgstr "Cod de conectare prin e-mail"
+
 #: templates/layout.tpl:19
 msgid "home"
 msgstr "acasă"
@@ -122,28 +146,36 @@ msgstr "Conectare cu contul Google"
 msgid "Yahoo account login"
 msgstr "Conectare cu contul Yahoo"
 
-#: templates/auth/login.tpl:17
+#: templates/auth/login.tpl:19
+msgid ""
+"If your OpenID provider is currently down, you can %srequest a one-time token"
+"%s via email."
+msgstr ""
+"Dacă furnizorul tău de OpenID este indisponibil momentan, poți %scere un cod "
+"de unică folosință%s prin e-mail."
+
+#: templates/auth/login.tpl:21
 msgid "What is OpenID?"
 msgstr "Ce este OpenID?"
 
-#: templates/auth/login.tpl:20
+#: templates/auth/login.tpl:24
 msgid "OpenID logo"
 msgstr "logo OpenID"
 
-#: templates/auth/login.tpl:21
+#: templates/auth/login.tpl:25
 msgid "is a faster, easier way to log in on the Internet."
 msgstr ""
 "este o modalitate mai rapidă și mai ușoară de a te autentifica pe Internet."
 
-#: templates/auth/login.tpl:26
+#: templates/auth/login.tpl:29
 msgid "No need to create a new account on this site;"
 msgstr "Nu este nevoie să îți creezi un cont nou pe acest site;"
 
-#: templates/auth/login.tpl:27
+#: templates/auth/login.tpl:30
 msgid "No need to remember yet another password;"
 msgstr "Nu este nevoie să memorezi o parolă în plus;"
 
-#: templates/auth/login.tpl:28
+#: templates/auth/login.tpl:31
 msgid ""
 "Once created, an OpenID account can be reused on any website that accepts "
 "OpenIDs;"
@@ -151,7 +183,7 @@ msgstr ""
 "Un cont OpenID, odată creat, poate fi refolosit pe orice site care acceptă "
 "OpenID;"
 
-#: templates/auth/login.tpl:29
+#: templates/auth/login.tpl:32
 msgid ""
 "Chances are you already have an OpenID, because many popular sites (Google, "
 "Yahoo and others) act as OpenID providers."
@@ -159,18 +191,42 @@ msgstr ""
 "Este posibil să ai deja un OpenID, deoarece multe site-uri populare (Google, "
 "Yahoo și altele) servesc ca furnizori de OpenID."
 
-#: templates/auth/login.tpl:32
+#: templates/auth/login.tpl:35
 msgid "You can read more on the %sOpenID website%s."
 msgstr ""
 "Poți citi mai multe informații pe %ssite-ul OpenID%s (în limba engleză)."
 
-#: templates/auth/login.tpl:34
+#: templates/auth/login.tpl:37
 msgid "How do I obtain an OpenID?"
 msgstr "Cum obțin un OpenID?"
 
-#: templates/auth/login.tpl:36
+#: templates/auth/login.tpl:39
 msgid "Check %sthe list of OpenID providers%s."
 msgstr "Consultă %slista de furnizori de OpenID%s."
+
+#: templates/auth/emailLogin.tpl:4
+msgid "email"
+msgstr "e-mail"
+
+#: templates/auth/emailLogin.tpl:10
+msgid ""
+"You can use this form to request a one-time token to login via email. This "
+"may be necessary in two cases:"
+msgstr ""
+"Cu acest formular poți cere un cod de unică folosință cu care să te "
+"conectezi prin e-mail. Poți avea nevoie de aceasta în două cazuri:"
+
+#: templates/auth/emailLogin.tpl:13
+msgid "Your OpenID provider is currently down;"
+msgstr "Furnizorul tău de OpenID este momentan indisponibil;"
+
+#: templates/auth/emailLogin.tpl:14
+msgid ""
+"Your account was migrated from another system and is not linked with any "
+"OpenID yet."
+msgstr ""
+"Contul tău a fost migrat de pe alt sistem și încă nu este legat de niciun "
+"OpenID."
 
 #: templates/auth/account.tpl:6
 msgid "username"
@@ -196,10 +252,6 @@ msgstr "introdu numele tău complet"
 msgid "optional; 3-50 characters"
 msgstr "opțional; 3-50 caractere"
 
-#: templates/auth/account.tpl:24
-msgid "email"
-msgstr "e-mail"
-
 #: templates/auth/account.tpl:26
 msgid "enter your email address"
 msgstr "introdu adresa de e-mail"
@@ -215,6 +267,27 @@ msgstr "Identități OpenID"
 #: templates/auth/account.tpl:45
 msgid "link another OpenID to this account"
 msgstr "leagă alt OpenID de acest cont"
+
+#: templates/email/emailLogin.tpl:1
+msgid "Hi,"
+msgstr "Bună ziua,"
+
+#: templates/email/emailLogin.tpl:3
+msgid ""
+"You are receiving this message because you requested a one-time login token. "
+"To complete your login, please visit this link within one hour:"
+msgstr ""
+"Primești acest mesaj deoarece ai cerut un cod de conectare de unică "
+"folosință. Pentru a completa conectarea, te rugăm să vizitezi această adresă "
+"în cel mult o oră:"
+
+#: templates/email/emailLogin.tpl:7
+msgid "If you did not request this token, please discard this message."
+msgstr "Dacă nu tu ai cerut codul, te rugăm să ignori acest mesaj."
+
+#: templates/email/emailLogin.tpl:9
+msgid "Thank you,"
+msgstr "Mulțumiri,"
 
 #~ msgid "User %s obtained %d points."
 #~ msgstr "Utilizatorul %s a obținut %d puncte."
