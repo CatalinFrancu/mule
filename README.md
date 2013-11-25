@@ -5,9 +5,10 @@ Mule is a PHP framework for website development, based on Smarty, Idiorm + Paris
 
 Includes:
 
-* OpenID authentication (one OpenID identity per account, no password recovery);
+* OpenID authentication (multiple OpenID identites per account, email login failsafe);
 * a database patching system;
-* session-based flash messages.
+* session-based flash messages;
+* localization (English and Romanian at the moment).
 
 
 Installation
